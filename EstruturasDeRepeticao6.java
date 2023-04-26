@@ -26,7 +26,7 @@ public class EstruturasDeRepeticao6 {
         acimaDe100++;
       }
       totalPI = (totalPares + totalImpares);
-      mediaValores = (totalValor / totalPI);
+      mediaValores = ((double) totalValor / totalPI);
 
 
     } while (num != 0);
