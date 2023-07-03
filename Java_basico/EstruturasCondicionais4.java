@@ -1,9 +1,6 @@
 package Java_basico;
 
-import sun.util.resources.CalendarData;
-
 import java.util.Calendar;
-import java.util.Date;
 import java.util.Scanner;
 
 public class EstruturasCondicionais4 {
