@@ -5,41 +5,56 @@ public class ContaBanco {
   public int numConta;
   protected String tipo;
   private String dono;
-  private Double saldo;
+  private float saldo;
   private Boolean status;
+
+  public void estadoAtual() {
+    System.out.println("---------------------------");
+    System.out.println("Numero da conta: " + this.getNumConta());
+    System.out.println("Dono: " + this.getDono());
+    System.out.println("Tipo: " + getTipo());
+    System.out.println("Saldo: " + getSaldo());
+    System.out.println("Status: " + getStatus());
+  }
 
   public void abrirConta(String tipo) {
     setTipo(tipo);
     setStatus(true);
     if (tipo == "CC") {
-      saldo = (double) 50;
+      // saldo = (float) 50;
+      this.setSaldo(50);
     } else if (tipo == "CP") {
-      saldo = (double) 150;
+      // saldo = (float) 150;
+      this.setSaldo(150);
     }
   }
 
   public void fecharConta() {
-    if (saldo > 0) {
-      System.out.println("Conta com dinheiro");
-    } else if (saldo < 0) {
-      System.out.println("Conta em debito");
+    if (this.getSaldo() > 0) {
+      System.out.println("Conta com dinheiro, impossivel fechar conta");
+    } else if (this.getSaldo() < 0) {
+      System.out.println("Conta em debito, impossivel fechar conta");
     } else {
-      setStatus(false);
+      this.setStatus(false);
+      System.out.println("Conta encerrada com sucesso");
     }
   }
 
-  public void depositar(Double valor) {
-    if (getStatus()) {
-      setSaldo(getSaldo() + valor);
+  public void depositar(float valor) {
+    if (this.getStatus()) {
+      // this.saldo = this.saldo + valor;
+      this.setSaldo(this.getSaldo() + valor);
+      System.out.println("Deposito realizado com sucesso ");
     } else {
-      System.out.println("Impossivel Depositar");
+      System.out.println("Impossivel Depositar, crie uma conta");
     }
   }
 
-  public void sacar(Double valor) {
-    if (status) {
-      if (getSaldo() > valor) {
-        setSaldo(getSaldo() - valor);
+  public void sacar(float valor) {
+    if (this.getStatus()) {
+      if (this.getSaldo() >= valor) {
+        this.setSaldo(this.getSaldo() - valor);
+        System.out.println("Saque realizado com sucesso ");
       } else {
         System.out.println("Saldo Insuficiente");
       }
@@ -49,16 +64,16 @@ public class ContaBanco {
   }
 
   public void pagarMensal() {
-    Double valor;
-    if (getTipo() == "CC") {
-      valor = (double) 12;
-    } else if (getTipo() == "CP") {
-      valor = (double) 20;
+    int valor = 0;
+    if (this.getTipo() == "CC") {
+      valor = 12;
+    } else if (this.getTipo() == "CP") {
+      valor = 20;
     }
 
-    if (getStatus()) {
-      if (getSaldo() > valor) {
-        setSaldo(getSaldo() - valor);
+    if (this.getStatus()) {
+      if (this.getSaldo() > valor) {
+        this.setSaldo(this.getSaldo() - valor);
       } else {
         System.out.println("Saldo Insuficiente");
       }
@@ -68,11 +83,8 @@ public class ContaBanco {
 
   }
 
-  public ContaBanco(int numConta, String tipo, String dono, Double saldo, Boolean status) {
-    this.numConta = numConta;
-    this.tipo = tipo;
-    this.dono = dono;
-    this.saldo = (double) 0;
+  public ContaBanco() {
+    this.saldo = (float) 0;
     this.status = false;
   }
 
@@ -81,7 +93,7 @@ public class ContaBanco {
   }
 
   public int getNumConta() {
-    return numConta;
+    return this.numConta;
   }
 
   public void setTipo(String tipo) {
@@ -89,7 +101,7 @@ public class ContaBanco {
   }
 
   public String getTipo() {
-    return tipo;
+    return this.tipo;
   }
 
   public void setDono(String dono) {
@@ -97,15 +109,15 @@ public class ContaBanco {
   }
 
   public String getDono() {
-    return dono;
+    return this.dono;
   }
 
-  public void setSaldo(Double saldo) {
-    this.saldo = saldo;
+  public void setSaldo(float f) {
+    this.saldo = f;
   }
 
-  public Double getSaldo() {
-    return saldo;
+  public float getSaldo() {
+    return this.saldo;
   }
 
   public void setStatus(Boolean status) {
@@ -113,7 +125,6 @@ public class ContaBanco {
   }
 
   public Boolean getStatus() {
-    return status;
+    return this.status;
   }
-
 }
