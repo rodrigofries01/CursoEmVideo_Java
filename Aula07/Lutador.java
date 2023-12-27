@@ -92,7 +92,7 @@ public class Lutador {
 
   private void setCategoria() {
     if (this.peso < 52.2) {
-      this.categoria = "Invalido, pois voce é muito leve";
+      this.categoria = "Invalido";
     } else if (this.peso <= 70.3) {
       this.categoria = "Leve";
     } else if (this.peso <= 83.9) {
