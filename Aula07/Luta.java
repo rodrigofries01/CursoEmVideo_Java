@@ -1,8 +1,8 @@
 package Aula07;
 
 public class Luta {
-  private String desafiado;
-  private String desafiante;
+  private Lutador desafiado;
+  private Lutador desafiante;
   private int rounds;
   private boolean aprovada;
 
@@ -13,26 +13,26 @@ public class Luta {
 
   }
 
-  public Luta(String desafiado, String desafiante, int rounds, boolean aprovada) {
+  public Luta(Lutador desafiado, Lutador desafiante, int rounds, boolean aprovada) {
     setDesafiado(desafiado);
     setDesafiante(desafiante);
     setRounds(rounds);
     setAprovada(aprovada);
   }
 
-  public void setDesafiado(String desafiado) {
+  public void setDesafiado(Lutador desafiado) {
     this.desafiado = desafiado;
   }
 
-  public String getDesafiado() {
+  public Lutador getDesafiado() {
     return this.desafiado;
   }
 
-  public void setDesafiante(String desafiante) {
+  public void setDesafiante(Lutador desafiante) {
     this.desafiante = desafiante;
   }
 
-  public String getDesafiante() {
+  public Lutador getDesafiante() {
     return this.desafiante;
   }
 
