@@ -18,6 +18,14 @@ public class Fatorial {
     formula = S;
   }
 
+  public void setNum(int num) {
+    this.num = num;
+  }
+
+  public int getNum() {
+    return this.num;
+  }
+
   public int getFatorial() {
     return fat;
   }

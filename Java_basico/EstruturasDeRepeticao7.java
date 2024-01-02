@@ -4,13 +4,13 @@ import java.util.Scanner;
 
 public class EstruturasDeRepeticao7 {
   public static void main(String[] args) {
-    Scanner teclado = new Scanner(System.in);
+    try (Scanner teclado = new Scanner(System.in)) {
+      System.out.println("Digite um valor: ");
+      int num = teclado.nextInt();
 
-    System.out.println("Digite um valor: ");
-    int num = teclado.nextInt();
-
-    for (int i = 0; i <= num; i+=10) {
-      System.out.println(i);
+      for (int i = 0; i <= num; i += 10) {
+        System.out.println(i);
+      }
     }
   }
 }

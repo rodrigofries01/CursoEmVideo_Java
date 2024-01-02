@@ -4,14 +4,15 @@ import java.util.Scanner;
 
 public class EstruturasDeRepeticao5 {
   public static void main(String[] args) {
-    Scanner teclado = new Scanner(System.in);
+    try (Scanner teclado = new Scanner(System.in)) {
+      int num;
 
-    int num;
+      do {
+        System.out.println("Digite um valor: ");
+        num = teclado.nextInt();
+      } while (num != 5);
+    }
 
-    do {
-      System.out.println("Digite um valor: ");
-      num = teclado.nextInt();
-    } while (num != 5);
     System.out.println("Acabou");
   }
 }
