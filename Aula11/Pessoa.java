@@ -1,11 +1,11 @@
 package Aula11;
 
 public abstract class Pessoa {
-  private String nome;
-  private int idade;
-  private String sexo;
+  protected String nome;
+  protected int idade;
+  protected String sexo;
 
-  public final void fazerAniver() {
+  public final void fazerAniversario() {
     setIdade(getIdade() + 1);
   }
 
@@ -33,9 +33,8 @@ public abstract class Pessoa {
     this.sexo = sexo;
   }
 
-  @Override
   public String toString() {
-    return "Pessoa [nome=" + nome + ", idade=" + idade + ", sexo=" + sexo + "]";
+    return "Pessoa [nome = " + nome + ", idade = " + idade + ", sexo = " + sexo + "]";
   }
 
 }

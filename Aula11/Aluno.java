@@ -4,8 +4,8 @@ public class Aluno extends Pessoa {
   private int matricula;
   private String curso;
 
-  public void PagarMensalidade() {
-
+  public void pagarMensalidade() {
+    System.out.println("Pagando mensalidade de " + getNome());
   }
 
   public int getMatricula() {

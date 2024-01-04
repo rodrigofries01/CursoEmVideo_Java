@@ -1,22 +1,23 @@
 package Aula11;
 
 public class Bolsista extends Aluno {
-  private int bolsa;
+  private float bolsa;
 
-  public void RenovarBolsa() {
-
+  public void renovarBolsa() {
+    System.out.println("Renovando bolsa de " + getNome());
   }
 
   @Override
-  public void PagarMensalidade() {
-
+  public void pagarMensalidade() {
+    System.out.println(getNome() + " é bolsista, pagamento facilitado");
   }
 
-  public void setBolsa(int bolsa) {
+  public float getBolsa() {
+    return bolsa;
+  }
+
+  public void setBolsa(float bolsa) {
     this.bolsa = bolsa;
   }
 
-  public int getBolsa() {
-    return bolsa;
-  }
 }
