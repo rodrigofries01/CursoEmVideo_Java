@@ -1,32 +1,36 @@
 package Aula12;
 
 public class Peixe extends Animal {
-    private String corEscama;
+  public Peixe(float peso, int idade, int membros) {
+    super(peso, idade, membros);
+  }
 
-    @Override
-    public void locomover() {
-        System.out.println("Nadando");
-    }
+  private String corEscama;
 
-    @Override
-    public void alimentar() {
-        System.out.println("Peixe se alimentando");
-    }
+  @Override
+  public void locomover() {
+    System.out.println("Peixe Nadando");
+  }
 
-    @Override
-    public void emitirSom() {
-        System.out.println("Peixe não faz som");
-    }
+  @Override
+  public void alimentar() {
+    System.out.println("Peixe se alimentando");
+  }
 
-    public void soltarBolhas() {
-        System.out.println("Soltou uma bolha");
-    }
+  @Override
+  public void emitirSom() {
+    System.out.println("Peixe não emite som");
+  }
 
-    public void setCorEscama(String corEscama) {
-        this.corEscama = corEscama;
-    }
+  public void fazerBolha() {
+    System.out.println("Fazendo uma bolha");
+  }
 
-    public String getCorEscama() {
-        return corEscama;
-    }
+  public void setCorEscama(String corEscama) {
+    this.corEscama = corEscama;
+  }
+
+  public String getCorEscama() {
+    return corEscama;
+  }
 }

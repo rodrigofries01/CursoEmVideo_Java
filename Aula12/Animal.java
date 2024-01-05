@@ -1,15 +1,21 @@
 package Aula12;
 
 public abstract class Animal {
-  private float peso;
-  private int idade;
-  private int membros;
+  protected float peso;
+  protected int idade;
+  protected int membros;
 
   public abstract void locomover();
 
   public abstract void alimentar();
 
   public abstract void emitirSom();
+
+  public Animal(float peso, int idade, int membros) {
+    this.peso = peso;
+    this.idade = idade;
+    this.membros = membros;
+  }
 
   public float getPeso() {
     return peso;
